@@ -1,0 +1,53 @@
+{
+    "tasks": [
+        {
+            "id": "25a2dfbc-a7fe-411b-b0e1-25d2f8f83a97",
+            "content": "Clean up the mess"
+        },
+        {
+            "id": "438b7516-a1ab-46c3-b6c8-011a0817bab9",
+            "content": "Fix the bugs"
+        },
+        {
+            "id": "d5476e77-f48d-4688-80e5-8a74d3034504",
+            "content": "Add more features.."
+        },
+        {
+            "id": "81e3fab3-6c7f-4c2a-bc50-043208972563",
+            "content": "Fix the UI."
+        },
+        {
+            "id": "81e3fab3-6c7f-4c2a-bc50-043208972544",
+            "content": "Fix the text"
+        }
+    ],
+    "columns": [
+        {
+            "id": "column-1",
+            "title": "To do",
+            "taskIds": [
+                "25a2dfbc-a7fe-411b-b0e1-25d2f8f83a97",
+                "438b7516-a1ab-46c3-b6c8-011a0817bab9",
+                "81e3fab3-6c7f-4c2a-bc50-043208972544"
+            ],
+            "color": "#448fd5"
+        },
+        {
+            "id": "column-2",
+            "title": "In progress",
+            "taskIds": ["d5476e77-f48d-4688-80e5-8a74d3034504"],
+            "color": "#cf3d5b"
+        },
+        {
+            "id": "column-3",
+            "title": "Done",
+            "taskIds": ["81e3fab3-6c7f-4c2a-bc50-043208972563"],
+            "color": "#14243E"
+        }
+    ],
+    "columnOrder": {
+        "column-1": "column-1",
+        "column-2": "column-2",
+        "column-3": "column-3"
+    }
+}
