@@ -10,13 +10,11 @@ const Task = ({
     task,
     index,
     onDelete,
-    // onEdit,
     creatingNewTaskId,
 }: {
     task: ITask
     index: number
     onDelete: (id: string) => void
-    // onEdit: (id: string, content: string) => void
     creatingNewTaskId: string | null
 }) => {
     const [showDeleteIcon, setShowDeleteIcon] = useState(false)
@@ -30,8 +28,6 @@ const Task = ({
             setIsEditing(true)
         }
     }, [creatingNewTaskId, task.id])
-
-    console.count('rerendered Task component')
 
     if (!tasksInitial) {
         return <Spinner />
@@ -81,6 +77,7 @@ const Task = ({
         return (
             <form onSubmit={handleSubmit}>
                 <TextArea
+                    data-testid='text-area'
                     value={newContent}
                     onChange={(e) => {
                         setNewContent(e.target.value)
@@ -103,10 +100,14 @@ const Task = ({
                     onDoubleClick={() => setIsEditing(true)}
                     onMouseOver={() => setShowDeleteIcon(true)}
                     onMouseOut={() => setShowDeleteIcon(false)}
+                    data-testid={`task-${task.id}`}
                 >
                     <Header>
                         {showDeleteIcon && (
-                            <DeleteIcon onClick={() => onDelete(task.id)}>
+                            <DeleteIcon
+                                onClick={() => onDelete(task.id)}
+                                data-testid='delete-icon'
+                            >
                                 ❌
                             </DeleteIcon>
                         )}

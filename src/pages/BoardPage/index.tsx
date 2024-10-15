@@ -4,15 +4,15 @@ import { KanbanBoard } from '../../components/kanban-board'
 import { Header, SearchContainer, SearchInput } from './styled'
 
 const BoardPage = () => {
-    const { searchTerm, setSearchTerm } = useContext(BoardContext)
+    const { setSearchTerm } = useContext(BoardContext)
 
     return (
         <>
-            <Header>
+            <Header data-testid='board-page-header'>
                 <SearchContainer>
                     <SearchInput
+                        data-testid='search-input'
                         onChange={(e) => setSearchTerm(e.target.value)}
-                        value={searchTerm}
                     />
                 </SearchContainer>
             </Header>

@@ -22,8 +22,6 @@ const KanbanBoard = () => {
     const onDragEnd = (result) => {
         const { destination, source, draggableId, type } = result
 
-        console.log('result onDragEnd', result)
-
         if (!destination) {
             return
         }
@@ -36,8 +34,6 @@ const KanbanBoard = () => {
         }
 
         if (type === DroppableTypes.COLUMN) {
-            console.log('moving column...')
-
             const newColumnOrder = [...columnOrder]
             newColumnOrder.splice(source.index, 1)
             newColumnOrder.splice(destination.index, 0, draggableId)
@@ -64,8 +60,6 @@ const KanbanBoard = () => {
             finishColumn !== undefined &&
             startColumn.id === finishColumn.id
         ) {
-            console.log('moving task in the same column...')
-
             const newTaskIds = [...startColumn.taskIds]
             newTaskIds.splice(source.index, 1)
             newTaskIds.splice(destination.index, 0, draggableId)
@@ -86,8 +80,6 @@ const KanbanBoard = () => {
 
             return
         }
-
-        console.log('moving task between columns...')
 
         const startColumnTaskIds = [...startColumn.taskIds]
         startColumnTaskIds.splice(source.index, 1)

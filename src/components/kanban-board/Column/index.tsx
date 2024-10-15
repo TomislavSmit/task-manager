@@ -35,8 +35,6 @@ const Column = ({
         setSearchTerm,
     } = useContext(BoardContext)
 
-    console.count('rerendered Column component')
-
     if (!columns || !column || !columnTasks || !tasksInitial) {
         return <Spinner />
     }
@@ -75,7 +73,6 @@ const Column = ({
 
     const handleCreate = () => {
         const newId = uuidv4()
-        console.log('creating new task...', newId)
 
         setCreatingNewTaskId(newId)
         setSearchTerm('')
@@ -101,6 +98,7 @@ const Column = ({
             {(provided) => (
                 <Container ref={provided.innerRef} {...provided.draggableProps}>
                     <Header
+                        data-testid={`column-header-${column.id}`}
                         $backgroundColor={column.color}
                         {...provided.dragHandleProps}
                     >
@@ -108,11 +106,17 @@ const Column = ({
                             {column.title} (
                             {tasks && numberOfTasks(column, tasks)})
                         </Title>
-                        <PlusIcon onClick={handleCreate}>+</PlusIcon>
+                        <PlusIcon
+                            onClick={handleCreate}
+                            data-testid={`column-header-create-task-${column.id}`}
+                        >
+                            +
+                        </PlusIcon>
                     </Header>
                     <Droppable droppableId={column.id}>
                         {(provided) => (
                             <TasksList
+                                data-testid={`task-list-${column.id}`}
                                 ref={provided.innerRef}
                                 {...provided.droppableProps}
                             >

@@ -2,7 +2,7 @@ import { Container } from './styled'
 
 const Spinner: React.FC = () => {
     return (
-        <Container role='status'>
+        <Container role='status' data-testid='spinner'>
             <svg
                 aria-hidden='true'
                 viewBox='0 0 100 101'
