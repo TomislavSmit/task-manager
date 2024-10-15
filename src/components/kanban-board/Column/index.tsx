@@ -96,11 +96,15 @@ const Column = ({
     return (
         <Draggable draggableId={column.id} index={index}>
             {(provided) => (
-                <Container ref={provided.innerRef} {...provided.draggableProps}>
+                <Container
+                    ref={provided.innerRef}
+                    {...provided.draggableProps}
+                    $backgroundColor={column.color}
+                >
                     <Header
                         data-testid={`column-header-${column.id}`}
-                        $backgroundColor={column.color}
                         {...provided.dragHandleProps}
+                        $backgroundColor={column.color}
                     >
                         <Title {...provided.dragHandleProps}>
                             {column.title} (

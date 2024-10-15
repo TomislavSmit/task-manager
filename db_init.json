@@ -30,19 +30,19 @@
                 "438b7516-a1ab-46c3-b6c8-011a0817bab9",
                 "81e3fab3-6c7f-4c2a-bc50-043208972544"
             ],
-            "color": "#448fd5"
+            "color": "68, 143, 213"
         },
         {
             "id": "column-2",
             "title": "In progress",
             "taskIds": ["d5476e77-f48d-4688-80e5-8a74d3034504"],
-            "color": "#cf3d5b"
+            "color": "207, 61, 91"
         },
         {
             "id": "column-3",
             "title": "Done",
             "taskIds": ["81e3fab3-6c7f-4c2a-bc50-043208972563"],
-            "color": "#14243E"
+            "color": "20, 36, 62"
         }
     ],
     "columnOrder": {
