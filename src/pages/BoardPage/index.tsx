@@ -1,24 +1,5 @@
-import { useContext } from 'react'
-import BoardContext from '../../context/board'
-import { KanbanBoard } from '../../components/kanban-board'
-import { Header, SearchContainer, SearchInput } from './styled'
+import { Board } from '../../components/Board'
 
-const BoardPage = () => {
-    const { setSearchTerm } = useContext(BoardContext)
-
-    return (
-        <>
-            <Header data-testid='board-page-header'>
-                <SearchContainer>
-                    <SearchInput
-                        data-testid='search-input'
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                    />
-                </SearchContainer>
-            </Header>
-            <KanbanBoard />
-        </>
-    )
-}
+const BoardPage: React.FC = () => <Board />
 
 export { BoardPage }

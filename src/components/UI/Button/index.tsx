@@ -5,7 +5,11 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     primary?: boolean
 }
 
-const Button = ({ children, primary = false, ...rest }: ButtonProps) => {
+const Button: React.FC<ButtonProps> = ({
+    children,
+    primary = false,
+    ...rest
+}) => {
     return (
         <ButtonStyled $primary={primary} {...rest}>
             {children}

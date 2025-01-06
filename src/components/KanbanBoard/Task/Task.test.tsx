@@ -5,11 +5,15 @@ import { ITask } from '../../../types'
 import { vi } from 'vitest'
 import { emptyContext, fullContext } from '../../../../testsSetup'
 import { KanbanBoard } from '../KanbanBoard'
+import axios from 'axios'
 
 describe('Task component', () => {
     const task: ITask = { id: 'task-1', content: 'Task content' }
     const onDelete = vi.fn()
     const creatingNewTaskId = null
+
+    vi.mock('axios')
+    const mockedAxios = axios as jest.Mocked<typeof axios>
 
     it('renders spinner when tasksInitial is null', async () => {
         const { getByTestId } = render(
@@ -117,6 +121,7 @@ describe('Task component', () => {
                 </KanbanBoard>
             </BoardContext.Provider>
         )
+        mockedAxios.put.mockResolvedValueOnce({})
 
         const container = getByTestId(`task-${fullContext.tasks[0].id}`)
         fireEvent.doubleClick(container)

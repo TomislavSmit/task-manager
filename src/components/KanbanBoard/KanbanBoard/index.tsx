@@ -10,7 +10,7 @@ import {
 import { DroppableTypes, IColumn } from '../../../types'
 import { Container } from './styled'
 
-const KanbanBoard = () => {
+const KanbanBoard: React.FC = () => {
     const { tasks, columns, setColumns, columnOrder, setColumnOrder } =
         useContext(BoardContext)
 

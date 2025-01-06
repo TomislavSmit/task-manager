@@ -28,7 +28,9 @@ const BoardContext = createContext<BoardContextProps>({
     setSearchTerm: () => {},
 })
 
-const BoardProvider = ({ children }: { children: React.ReactNode }) => {
+const BoardProvider: React.FC<{ children: React.ReactNode }> = ({
+    children,
+}) => {
     const [tasksInitial, setTasksInitial] = useState<ITask[] | null>(null)
     const [columns, setColumns] = useState<IColumn[] | null>(null)
     const [columnOrder, setColumnOrder] = useState<string[] | null>(null)

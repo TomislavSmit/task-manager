@@ -7,24 +7,18 @@ export const SearchContainer = styled.div`
     width: 100%;
     padding: 1rem;
 `
-export const Header = styled.div`
+export const Header = styled.header`
+    position: relative;
     display: flex;
     justify-content: space-between;
-    min-height: 20px;
-    position: relative;
+    min-height: 1.25rem;
     padding: 1rem;
 `
 export const SearchInput = styled.input.attrs({ placeholder: 'Search...' })`
-    border: 1px solid #ccc;
     outline: none;
-    border-radius: 4px;
+    border: 0.0625rem solid #ccc;
+    border-radius: 0.25rem;
     padding: 0.4rem;
     width: 100%;
-    max-width: 220px;
-`
-export const ViewSelector = styled.div`
-    display: flex;
-    align-items: center;
-    width: 100%;
-    gap: 10px;
+    max-width: 14rem;
 `

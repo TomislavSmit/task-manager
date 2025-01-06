@@ -6,17 +6,12 @@ import { updateTaskToApi } from '../../../api/board'
 import { Spinner } from '../../UI'
 import { Container, DeleteIcon, Header, TextArea } from './styled'
 
-const Task = ({
-    task,
-    index,
-    onDelete,
-    creatingNewTaskId,
-}: {
+const Task: React.FC<{
     task: ITask
     index: number
     onDelete: (id: string) => void
     creatingNewTaskId: string | null
-}) => {
+}> = ({ task, index, onDelete, creatingNewTaskId }) => {
     const [showDeleteIcon, setShowDeleteIcon] = useState(false)
     const [newContent, setNewContent] = useState(task.content)
     const [isEditind, setIsEditing] = useState(false)

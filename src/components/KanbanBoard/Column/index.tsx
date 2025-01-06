@@ -13,16 +13,12 @@ import { IColumn, ITask } from '../../../types'
 import { Container, Header, PlusIcon, TasksList, Title } from './styled'
 import { Spinner } from '../../UI'
 
-const Column = ({
-    column,
-    columnTasks,
-    index,
-}: {
+const Column: React.FC<{
     column: IColumn | undefined
     // TODO: Check if this type is correct
     columnTasks: (ITask | undefined)[]
     index: number
-}) => {
+}> = ({ column, columnTasks, index }) => {
     const [creatingNewTaskId, setCreatingNewTaskId] = useState<string | null>(
         null
     )
